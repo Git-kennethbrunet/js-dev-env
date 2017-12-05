@@ -4,24 +4,27 @@
   "description": "JavaScript development environment Pluralsight course taken by Ken Brunet.",
   "scripts": {
     "prestart": "babel-node buildScripts/startMessage.js",
-    "start": "npm-run-all --parallel security-check open:src lint:watch test:watch",
+    "start": "npm-run-all --parallel security-check open:src lint:watch test:watch start-mock-api",
     "open:src": "babel-node buildScripts/srcServer.js",
     "security-check": "nsp check",
-    "localtunnel": "lt --port 8088 --subdomain developertest ",
+    "localtunnel": "lt --port 3000 --subdomain developertest ",
     "sharedev": "npm-run-all --parallel open:src localtunnel",
-
     "lint": "esw webpack.config.* src buildScripts --color",
     "lint:watch": "npm run lint -- --watch",
-
     "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\" --color",
-    "test:watch": "npm run test -- --watch"
-
+    "test:watch": "npm run test -- --watch",
+    "generate-mock-data": "babel-node buildScripts/generateMockData",
+    "prestart-mock-api": "npm run generate-mock-data",
+    "start-mock-api": "json-server --watch src/api/db.json --port 3001"
   },
   "repository": {
     "type": "git"
   },
   "author": "Ken Brunet",
   "license": "MIT",
+  "dependencies": {
+    "whatwg-fetch": "^1.0.0"
+  },
   "devDependencies": {
     "babel-cli": "6.16.0",
     "babel-core": "6.17.0",

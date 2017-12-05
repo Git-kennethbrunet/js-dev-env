@@ -25,7 +25,16 @@ app.use(require('webpack-dev-middleware')(compiler, {
 // any call to root (/)
 app.get('/', function (req, res) {
   // __dirname holds the directory where the server is run in
-  res.sendFile(path.join(__dirname, '..//src/index.html'));
+  res.sendFile(path.join(__dirname, '../src/index.html'));
+});
+
+// NEW ROUTE: Hard coding for simlicity... this would be a real database here [x]
+app.get('/users', function (req, res) {
+  res.json([
+    { "id": 1, "firstName": "Cobby", "lastName": "Development", "email": "cobbyd@gmail.com" },
+    { "id": 2, "firstName": "Tammy", "lastName": "Norton", "email": "tnorton@yahoo.com" },
+    { "id": 3, "firstName": "Kenneth", "lastName": "Brunet", "email": "k.bru@zed.com" }
+  ]);
 });
 
 app.listen(port, function (err) {
