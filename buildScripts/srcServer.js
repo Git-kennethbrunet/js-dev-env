@@ -29,7 +29,7 @@ app.get('/', function (req, res) {
 });
 
 // NEW ROUTE: Hard coding for simlicity... this would be a real database here [x]
-app.get('/users', function (req, res) {
+app.get("/users", function (req, res) {
   res.json([
     { "id": 1, "firstName": "Cobby", "lastName": "Development", "email": "cobbyd@gmail.com" },
     { "id": 2, "firstName": "Tammy", "lastName": "Norton", "email": "tnorton@yahoo.com" },

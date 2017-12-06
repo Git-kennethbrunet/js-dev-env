@@ -9,8 +9,8 @@
 <html lang="en">
 
 <head>
-  <meta charset=UTF-8>
-  <script src="https://cdn.polyfill.io/v2/polyfill.js?features=fetch"></script>
+  <meta http-equiv="X-UA-Compatible" content="IE=IE8" charset=UTF-8>
+  <script src="https://cdn.polyfill.io/v2/polyfill.js?features=Fetch,default,Array.from,Promise"></script>
 </head>
 
 <body>
@@ -18,17 +18,17 @@
   <h2>Users</h2>
   <table>
     <thead>
-      <th>&nbsp;Command</th>
-      <th>&nbsp;Id</th>
-      <th>&nbsp;First Name</th>
-      <th>&nbsp;Last Name</th>
-      <th>&nbsp;Email</th>
+      <th>Id</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>&nbsp;Options</th>
     </thead>
     <tbody id="users"></tbody>
   </table>
-
+  <p id="message">Message</p>
   <script src="bundle.js"></script>
-  <p> JSON Schema https://json.schema.org </p>
+  <p> JSON Schema <a href="http://json-schema.org" target="_blank">http://json-schema.org</a></p>
   <p> API Call by: Ken Brunet </p>
   <p>Build: 1.0.25</p>
 </body>

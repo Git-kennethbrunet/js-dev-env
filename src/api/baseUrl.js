@@ -2,12 +2,12 @@
 export default function getBaseUrl() {
   const inDev = window.location.hostname  === 'localhost';
   alert ('inDev = ' + inDev)
-  return inDev ? 'http://localhost:3001/' : '/';
+  return inDev ? 'http://localhost:8089/' : '/';
 }
 */
 
 export default function getBaseUrl() {
-  return getQueryStringParameterByName("useMockApi") ? "http://localhost:3001/" : "/";
+  return getQueryStringParameterByName("useMockApi") ? "http://localhost:8089/" : "/";
 }
 
 function getQueryStringParameterByName(name, url) {
