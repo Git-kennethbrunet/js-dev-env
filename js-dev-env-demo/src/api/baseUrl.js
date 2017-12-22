@@ -7,7 +7,7 @@ export default function getBaseUrl() {
 */
 
 export default function getBaseUrl() {
-  return getQueryStringParameterByName("useMockApi") ? "http://localhost:8089/" : "/";
+  return getQueryStringParameterByName("useMockApi") ? "http://localhost:8089/" : "https://desolate-garden-85374.herokuapp.com/";
 }
 
 function getQueryStringParameterByName(name, url) {

@@ -1,5 +1,5 @@
 import path from 'path';
-// import HtmlWebpackPlugin from 'html-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
   debug: true,
@@ -16,10 +16,10 @@ export default {
   },
   plugins: [
     // creating the bundling index template reeference to bunled JS
-    // new HtmlWebpackPlugin({
-    //  template: 'src/index.html',
-    //  inject: true
-    //})
+    new HtmlWebpackPlugin({
+      template: 'src/index.html',
+      inject: true
+    })
   ],
   devServer: {
     contentBase: path.resolve(__dirname, 'src'),

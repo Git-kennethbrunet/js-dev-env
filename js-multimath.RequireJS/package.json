@@ -1,0 +1,21 @@
+{
+  "name": "js-multimath",
+  "version": "1.0.0",
+  "description": "A simple math game demp built in Node and Express hosted on Heroku",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && ext 1",
+    "start": "http-server",
+    "build": "./node_modules/.bin/webpack js/app.js build/bundle.js"
+  },
+  "author": "Ken Brunet",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^0.9.0",
+    "lint": "^1.1.2",
+    "webpack": "^3.10.0"
+  },
+  "dependencies": {
+    "requirejs": "^2.2.0"
+  }
+}

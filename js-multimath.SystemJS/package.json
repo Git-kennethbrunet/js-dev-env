@@ -1,0 +1,21 @@
+{
+  "name": "js-multimath",
+  "version": "1.0.0",
+  "description": "A simple math game demp built in Node and Express hosted on Heroku",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && ext 1",
+    "start": "http-server",
+    "build": "./node_modules/.bin/browserify js/app.js --outfile build/bundle.js"
+  },
+  "author": "Brice Wilson",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^14.5.0",
+    "http-server": "^0.9.0"
+  },
+  "dependencies": {
+    "requirejs": "^2.2.0",
+    "systemjs": "^0.19.27"
+  }
+}

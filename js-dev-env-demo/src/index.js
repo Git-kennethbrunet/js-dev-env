@@ -6,7 +6,8 @@ import './index.css';
 import { getUsers, deleteUser } from './api/userApi';
 
 // npm install es6-promise, then added this line below
-import { polyfill } from 'es6-promise'; polyfill();
+import { polyfill } from 'es6-promise';
+polyfill();
 
 // Populates table of users via APIc all (using plan JavaScript)
 getUsers().then(result => {
