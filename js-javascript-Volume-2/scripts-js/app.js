@@ -1,27 +1,226 @@
 
-console.log('Loading app.js with ES2015 format, built w/Webpack and Babel loader in js-javascript-Volume-2 ...' + '\n');
+console.log("Loading app.js with ES2015 format, built w/Webpack and Babel loader in js-javascript-Volume-2 ..." + "\n");
 
 // js-javascript-Volume-2
-// Chapter 1 ---------------------------------------------------------------------------------------------------------
+// Chapter 5 ---------------------------------------------------------------------------------------------------------
+// Function & addisional practice w/functions 
 
-// Control Flows "for" loops statement
-var i = 0; 
-for (i = 0; i > 11; i++) {
-  alert("Number " + i);
+// Example 3
+
+var name = "Mark";
+var name2 = "Lisa";
+var name3 = "Denny";
+var msg = "Hi! ";
+
+function sayHello(message, person) {
+  var strName = person;
+  var strMsg = message;
+  alert(strMsg + strName);
+  console.log(strMsg + strName);
 }
 
-// Control Flows "switch" statement
+sayHello(msg, name); // invole a function with 2 arguments(NOTE: if undefined; you must pass a value type...)
+sayHello(msg, name2);
+sayHello(msg, name3);
+sayHello("This is the first argument", ", this is the second agument!")
 
-/* 
+/* Example 2
 
-// Astrological signs
+var name = "Mark";
+var name2 = "Lisa";
+var name3 = "Denny";
+var msg = "Hi! ";
+
+function sayHello (message, person) {
+  var strName = person;
+  var strMsg = message;
+  alert(strMsg + strName);
+  console.log(strMsg + strName);
+}
+
+sayHello(msg, name);
+sayHello(msg, name2);
+sayHello(msg, name3);
+
+*/
+
+/* Example 1 
+
+var name = "Mark";
+var name2 = "Lisa";
+var name3 = "Denny";
+
+console.log("Hi! " + name);
+console.log("Hi! " + name2);
+console.log("Hi! " + name3);
+
+alert("Hi! " + name + ", " + name2 + ", " + name3 + ", ");
+
+*/
+
+// Chapter 4 ---------------------------------------------------------------------------------------------------------
+// Control Flows "do while and while" loops statement
+
+/*
+
+ while looping (sample example 1)
+console.log("\n" + "Continue with 'CheerUp' sample #4...");
+
+var sad = confirm("Would you like to be cheered up?");
+while (sad) {
+  alert("What do you call a booerang that doesn't come back? A stick... Lol....!")
+  var yes = confirm("Would you like to continue our session?")
+  if (yes) {
+    var response = prompt("Tell me about your blessing!", "Type your blessings here!"); 
+    if (response) {
+      alert("Wow! You sure have a lot to be Greatful for!")
+      sad = false;
+    }
+  } else {
+    sad = false;
+  }
+}
+
+ while looping (example 3) - this code will only run if always true.
+confirm("Continue with 'while' looping example 3?")
+console.log("\n" + "Continue with 'while' example #3...");
+var p = 1;
+while (p < 11) {  
+  console.log("Prinitng number " + p + " to console.log.");
+  p++;
+}
+
+ do while looping (example 2) - this code will always run once.
+confirm("Continue with 'do while' looping looping example 2?")
+console.log("\n" + "Continue with 'do while' example #2...");  next line break
+var p = 1;
+do {  
+  console.log("Prinitng number " + p + " to console.log.");
+  p++;
+} while (p < 11);
+
+ do while looping (example 1)
+confirm("Continue wiht 'do while' looping example 1?")
+console.log("\n" + "Continue with 'do while' example #1...");  next line break
+var p = 1;
+do {
+  if (p % 3 === 0 && p != 0) {
+    if (p % 5 === 0) {
+      console.log("Number " + p + " fizzbuzz");
+    } else {
+      console.log("Number " + p + " fizz");
+    }
+  } else if (p % 5 === 0 && p != 0) {
+    console.log("Number " + p + " buzz");
+  } else {
+    console.log("Number " + p + " ---");
+  }
+  p++;
+} while (p <= 100);
+*/
+
+// Chapter 3 ---------------------------------------------------------------------------------------------------------
+// Control Flows "for" loops statement
+/*
+
+for (var a = 1; a <= 100; a++) {
+  if (a % 3 === 0 && a != 0) {
+    if (a % 5 === 0) {
+      console.log("Number " + a + " fizzbuzz");
+    } else {
+      console.log("Number " + a + " fizz");
+    }
+  } else if (a % 5 === 0 && a != 0) {
+    console.log("Number " + a + " buzz");
+  } else {
+    console.log("Number " + a + " ---");
+  }
+}
+
+confirm("continue to next?")
+
+if (randomNumber % 3 === 0 && randomNumber != 0) {  modulo
+  if (randomNumber % 5 === 0) {
+    console.log("fizzbuzz = " + randomNumber);
+  } else {
+    console.log("fizz = " + randomNumber);
+  }
+} else if (randomNumber % 5 === 0 && randomNumber != 0) {
+  console.log("buzz = " + randomNumber);
+} else {
+  console.log(randomNumber);
+}
+
+confirm("continue to next?")
+
+var fizzbuzzLoopCount = 100;
+var fizzbuzzCount = 0;
+var fizzCount = 0;
+var buzzCount = 0;
+var otherCount = 0;
+var totalCount = 0;
+var x = 1;
+
+for (x; x <= fizzbuzzLoopCount; x++) {
+
+  var randomNumber = Math.round(Math.random() * 15);  generate & round (by 15)
+  if (randomNumber % 3 === 0 && randomNumber != 0) {  modulo
+    if (randomNumber % 5 === 0) {
+      //console.log("Line " + x + " fizzbuzz = " + randomNumber);
+      fizzbuzzCount++;
+    } else {
+      //console.log("Line  " + x + " fizz = " + randomNumber);
+      fizzCount++;
+    }
+  } else if (randomNumber % 5 === 0 && randomNumber != 0) {
+    //console.log("Line  " + x + " buzz = " + randomNumber);
+    buzzCount++;
+  } else {
+    //console.log("Line  " + x + " " + randomNumber);
+    otherCount++;
+  }
+
+}
+console.log("+-- Fizz Buzz Count --");
+console.log("+ Fizz Count = " + fizzCount);
+console.log("+ Buzz Count = " + buzzCount);
+console.log("+ Other Count = " + otherCount);
+console.log("+ Fizzbuzz Count = " + fizzbuzzCount);
+totalCount = otherCount + buzzCount + fizzCount + fizzbuzzCount;
+console.log("+ =====================");
+console.log("+ Total Count = " + totalCount);
+
+*/
+
+// Chapter 2 ---------------------------------------------------------------------------------------------------------
+// Control Flows "for" loops statement
+// this should be checked for logic errors; the inner condition must be set to false at some point or infinity loop...
+
+/*
+
+ var i = 10;
+ for (i; i > 0; i--) {
+   console.log("Number " + i);
+   alert("Number " + i);
+ }
+ console.log("NEXT LOOP");
+ var x = 1;
+ for (x; x <= 10; x++) {
+   console.log("Number " + x);
+   alert("Number " + x);
+ }
+
+ Control Flows "switch" statement
+
+/*
+ Astrological signs
 var sign = "Aquarius, Aries, Taurus, Gemini, Cancer, Leo, Virgo, Libra, Scorpio, Sagittarius, Capricorn, and Pisces?"
 var signMsg = "What is you astrological sige? " + sign + "?";
 var signSelection = prompt(sign);
 signSelection = signSelection.trim().toLowerCase();
 switch (signSelection) {
   case "aquarius":
-    alert("Intellectual stimulation is by far the greatest aphrodisiac for Aquarius. There's nothing that can "
+    alert("Intellectual stimulation is by far the greatest aphrodisiac for Aquarius. There"s nothing that can "
       + "attract an Aquarius more than an interesting conversation with a person. Openness, communication, imagination and "
       + "willingness to risk are the qualities that fit well in the perspective of life of this zodiac sign. Their compatibility "
       + "with other signs can be complex, Integrity and honesty are essential for anyone who wants a long-term relationship "
@@ -47,17 +246,17 @@ switch (signSelection) {
     alert("Cancer is a very emotional sign, and feelings are the most important thing in their relationships. Gentle "
       + "and caring, they will show their sensibility to the world without even thinking they might get hurt. For partners, they "
       + "always choose a person who is able to understand them through non-verbal, silent contact, and a shared daily routine, "
-      + "and their affection won't last long with superficial, flaky or unreliable partners. The lack of initiative these "
-      + "individuals suffer from won't make it easy for them to build a sex life they wish for, if they don't find a partner "
+      + "and their affection won"t last long with superficial, flaky or unreliable partners. The lack of initiative these "
+      + "individuals suffer from won"t make it easy for them to build a sex life they wish for, if they don"t find a partner "
       + "who is able to make them feel calm, protected, and free to express.");
     break;
   case "leo":
     alert("This Fire sign is passionate and sincere and its representatives show their feelings with ease and clarity. "
       + "When in love, they are fun, loyal, respectful and very generous towards their loved one. They will take the role of a leader "
       + "in any relationship, and strongly rely on their need for independency and initiative. This can be tiring for their partner "
-      + "at times, especially if they start imposing their will and organizing things that aren't theirs to organize in the first "
+      + "at times, especially if they start imposing their will and organizing things that aren"t theirs to organize in the first "
       + "place. Each Leo needs a partner who is self-aware, reasonable and on the same intellectual level as them. Their partner "
-      + "also has to feel free to express and fight for themselves, or too much light from their Leo's Sun might burn their own "
+      + "also has to feel free to express and fight for themselves, or too much light from their Leo"s Sun might burn their own "
       + "personality down.");
     break;
   case "virgo":
@@ -99,7 +298,7 @@ switch (signSelection) {
       + "years are often needed for them to open enough to chat about their actual emotional problems.");
     break;
   case "aquarius":
-    alert("Intellectual stimulation is by far the greatest aphrodisiac for Aquarius. There's nothing that can "
+    alert("Intellectual stimulation is by far the greatest aphrodisiac for Aquarius. There"s nothing that can "
       + "attract an Aquarius more than an interesting conversation with a person. Openness, communication, imagination and "
       + "willingness to risk are the qualities that fit well in the perspective of life of this zodiac sign. Their "
       + "compatibility with other signs can be complex, Integrity and honesty are essential for anyone who wants a "
@@ -115,12 +314,10 @@ switch (signSelection) {
   default:
     break;
 }
-
-*/ 
+*/
 
 /*
-
-// js-javascript-Volume-1 (Chapter 1-11)
+ js-javascript-Volume-1 (Chapter 1-11)
 String
 Numbers
 Variable
@@ -132,57 +329,54 @@ promot()
 alert()
 confirm()
 Operators ( i.e., ===, !=, &&, >, <, +, -, *, and / )
-
 */
 
 /*
-
-// Zombie Apocalypse game
+ Zombie Apocalypse game
 var weapons = "A Bow and arrow, an Axe or the Rubber chicken next to you?"
 var zombieMsg = "A widespread rise of zombies hostile to human life engages in a general assault on civilization; you are in a looting a store and suddenly a zombie burst though the door!!!"
 alert(zombieMsg);
 
-// Selection of weapon
+ Selection of weapon
 var zombieMsg2 = "You search agound franticlly for a weapon. What do you choose? " + weapons + "?";
 var weaponChoiceIs = prompt(zombieMsg2);
 var radnomNumber = Math.round(Math.random());
 
-weaponChoiceIs = weaponChoiceIs.trim().toLowerCase(); // normilize the string to lower case
+weaponChoiceIs = weaponChoiceIs.trim().toLowerCase();  normilize the string to lower case
 if (weaponChoiceIs === "bow and arrow") {
   alert("The " + weaponChoiceIs + " is a great selection, this give you the ability to shoot from far away!");
 } else if (weaponChoiceIs === "axe") {
   alert("The " + weaponChoiceIs + " is a great selection, this give you the ability for close hand-to-had combat!");
 } else if (weaponChoiceIs === "rubber chicken") {
   alert("The " + weaponChoiceIs + " is a good selection, but not as deadly as the rest!");
-} else { // default
+} else {  default
   alert("This selection is not valid, you must have a weapon, so you grab the rubber chicken next to you!");
   weaponChoiceIs = "rubber chicken";
 }
 
-// Attacking the zombie 50/50
+ Attacking the zombie 50/50
 alert("You attack the zombie with the " + weaponChoiceIs + "!!!");
 
-// 50/50 chance of killing the zombie
+ 50/50 chance of killing the zombie
 if (radnomNumber === 0) {
   alert("Ouch... you have been attack and the zombie bites you!!! You are now part of the Zombies of the apocalypse.");
 } else if (radnomNumber === 1) {
   alert("You have been attack by the zombie... you have killed the zombie with the " + weaponChoiceIs + "!!!");
 }
-
 */
 
-// Control Flows and comparison operators
+Control Flows and comparison operators
 
 /*
-var randomNumber = Math.round(Math.random() * 15); // generate & round (by 15)
-if (randomNumber % 3 === 0 && randomNumber != 0) { // modulo
+var randomNumber = Math.round(Math.random() * 15);  generate & round (by 15)
+if (randomNumber % 3 === 0 && randomNumber != 0) {  modulo
     if (randomNumber % 5 === 0) {
-        alert('fizzbuzz = ' + randomNumber);
+        alert("fizzbuzz = " + randomNumber);
     } else {
-        alert('fizz = ' + randomNumber);
+        alert("fizz = " + randomNumber);
     }
 } else if (randomNumber % 5 === 0 && randomNumber != 0) {
-    alert('buzz = ' + randomNumber);
+    alert("buzz = " + randomNumber);
 } else {
     console.log(randomNumber);
 }
